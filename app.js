@@ -12,7 +12,10 @@ function sortear(){
 
         
     }
-    alert(sorteados);
+    //Necessário verificar onde o elemento esta no arquivo HTML e utilizar a função inner HTML e colar a label
+    //exatamente como está no arquivo HTML
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
 }
 
 function obterNumeroAleatorio(min, max) {
