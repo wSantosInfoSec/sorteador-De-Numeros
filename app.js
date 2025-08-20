@@ -3,10 +3,10 @@ function sortear(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
-    let sorteados = []
+    let sorteados = [];
     let numero;
 
-    for (let i = 0 < quantidade; i++){
+    for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
         sorteados.push(numero);
 
