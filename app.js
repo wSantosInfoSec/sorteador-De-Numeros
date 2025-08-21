@@ -10,16 +10,33 @@ function sortear(){
         numero = obterNumeroAleatorio(de, ate);
         sorteados.push(numero);
 
+        while (sorteados.includes(numero)) {
+            numero = obterNumeroAleatorio(de, ate);
+        }
+
         
     }
     //Necessário verificar onde o elemento esta no arquivo HTML e utilizar a função inner HTML e colar a label
     //exatamente como está no arquivo HTML
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+    alterarStatusBotao();
 }
 
 function obterNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 
 
+}
+
+funtion alterarStatusBotao() {
+    let botao = document.getElementById(`btn-reiniciar`);
+    if (botao.classList.contains('container__botao-desabilitado')) {
+        botao.classList.remove('container__botao-desabilitado')
+        botao.classList.add('container__botao');       
+    } else {
+        botao.classList.remove('container__botao')
+        botao.classList.add('container__botao-desabilitado')
+    }
+    
 }
