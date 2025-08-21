@@ -6,6 +6,12 @@ function sortear(){
     let sorteados = [];
     let numero;
 
+    //Primeira função if criada sem ajuda e sem erros! :)
+    if (de >= ate) {
+    alert ('Número no campo "De" precisa ser menor que no campo "Ate"!')
+
+    }
+
     for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
         sorteados.push(numero);
