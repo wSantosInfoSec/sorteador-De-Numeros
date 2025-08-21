@@ -9,17 +9,24 @@ function sortear(){
     //Primeira função if criada sem ajuda e sem erros! :)
     if (de >= ate) {
     alert ('Número no campo "De" precisa ser menor que no campo "Ate"!')
+    return;
+    }
+
+    if (quantidade > (ate - de + 1)) {
+        alert ('Quantidade de números sorteados deve ser maior que o intervalo de números!');
+        return;
 
     }
 
+
     for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
-        sorteados.push(numero);
+        
 
         while (sorteados.includes(numero)) {
             numero = obterNumeroAleatorio(de, ate);
         }
-
+        sorteados.push(numero);
         
     }
     //Necessário verificar onde o elemento esta no arquivo HTML e utilizar a função inner HTML e colar a label
